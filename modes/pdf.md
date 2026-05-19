@@ -33,24 +33,20 @@
 
 ## Diseño del PDF
 
-- **Fonts**: Space Grotesk (headings, 600-700) + DM Sans (body, 400-500)
-- **Fonts self-hosted**: `fonts/`
-- **Header**: nombre en Space Grotesk 24px bold + línea gradiente `linear-gradient(to right, hsl(187,74%,32%), hsl(270,70%,45%))` 2px + fila de contacto
-- **Section headers**: Space Grotesk 13px, uppercase, letter-spacing 0.05em, color cyan primary
-- **Body**: DM Sans 11px, line-height 1.5
-- **Company names**: color accent purple `hsl(270,70%,45%)`
-- **Márgenes**: 0.6in
+- **Font**: Georgia, serif (system font — no embedding required)
+- **Header**: nombre centrado 26px bold + fila de contacto centrada con separadores `·`
+- **Section headers**: 11px, uppercase, bold, color azul `#2563eb`, línea inferior `1px solid #e2e2e2`
+- **Body**: 11px, line-height 1.6
+- **Márgenes**: 32px top/bottom, 40px left/right
 - **Background**: blanco puro
 
 ## Orden de secciones (optimizado "6-second recruiter scan")
 
-1. Header (nombre grande, gradiente, contacto, link portfolio)
-2. Professional Summary (3-4 líneas, keyword-dense)
-3. Core Competencies (6-8 keyword phrases en flex-grid)
-4. Work Experience (cronológico inverso)
-5. Projects (top 3-4 más relevantes)
-6. Education & Certifications
-7. Skills (idiomas + técnicos)
+1. Header (nombre centrado, contacto, link portfolio)
+2. Profile Summary (3-4 líneas, keyword-dense)
+3. Work Experience (cronológico inverso)
+4. Technical Skills (bulleted list con categorías en bold)
+5. Education
 
 ## Estrategia de keyword injection (ético, basado en verdad)
 
@@ -72,25 +68,58 @@ Usar el template en `cv-template.html`. Reemplazar los placeholders `{{...}}` co
 | `{{NAME}}` | (from profile.yml) |
 | `{{PHONE}}` | (from profile.yml — include with its separator only when `profile.yml` has a non-empty `phone` value; omit both `<span>` and `<span class="separator">` otherwise) |
 | `{{EMAIL}}` | (from profile.yml) |
-| `{{LINKEDIN_URL}}` | [from profile.yml] |
-| `{{LINKEDIN_DISPLAY}}` | [from profile.yml] |
-| `{{PORTFOLIO_URL}}` | [from profile.yml] (o /es según idioma) |
-| `{{PORTFOLIO_DISPLAY}}` | [from profile.yml] (o /es según idioma) |
+| `{{LINKEDIN_URL}}` / `{{LINKEDIN_DISPLAY}}` | [from profile.yml] |
+| `{{PORTFOLIO_URL}}` / `{{PORTFOLIO_DISPLAY}}` | [from profile.yml] — renders as website link (e.g. `manukashyap.in`) |
 | `{{LOCATION}}` | [from profile.yml] |
-| `{{SECTION_SUMMARY}}` | Professional Summary / Resumen Profesional |
+| `{{SECTION_SUMMARY}}` | `Profile Summary` / `Resumen de Perfil` |
 | `{{SUMMARY_TEXT}}` | Summary personalizado con keywords |
-| `{{SECTION_COMPETENCIES}}` | Core Competencies / Competencias Core |
-| `{{COMPETENCIES}}` | `<span class="competency-tag">keyword</span>` × 6-8 |
-| `{{SECTION_EXPERIENCE}}` | Work Experience / Experiencia Laboral |
-| `{{EXPERIENCE}}` | HTML de cada trabajo con bullets reordenados |
-| `{{SECTION_PROJECTS}}` | Projects / Proyectos |
-| `{{PROJECTS}}` | HTML de top 3-4 proyectos |
-| `{{SECTION_EDUCATION}}` | Education / Formación |
-| `{{EDUCATION}}` | HTML de educación |
-| `{{SECTION_CERTIFICATIONS}}` | Certifications / Certificaciones |
-| `{{CERTIFICATIONS}}` | HTML de certificaciones |
-| `{{SECTION_SKILLS}}` | Skills / Competencias |
-| `{{SKILLS}}` | HTML de skills |
+| `{{SECTION_EXPERIENCE}}` | `Work Experience` / `Experiencia Laboral` |
+| `{{EXPERIENCE}}` | One `.job` div per role — see HTML structure below |
+| `{{SECTION_SKILLS}}` | `Technical Skills` / `Habilidades Técnicas` |
+| `{{SKILLS}}` | `<ul class="skills-list">` with one `<li>` per category — see HTML structure below |
+| `{{SECTION_EDUCATION}}` | `Education` / `Formación` |
+| `{{EDUCATION}}` | One `.edu-item` div per degree — see HTML structure below |
+
+### HTML structures for placeholders
+
+**`{{EXPERIENCE}}` — one block per role:**
+
+```html
+<div class="job">
+  <div class="job-title">Software Engineer 2</div>
+  <div class="job-meta">
+    <span class="job-company">JPMorgan Chase and Co</span>
+    <span class="job-period">Sep 2024 - Present</span>
+  </div>
+  <ul>
+    <li>Designed a hybrid scheduling engine using <strong>Quartz</strong> for precise scheduling...</li>
+    <li>Second bullet point here.</li>
+  </ul>
+</div>
+```
+
+**`{{SKILLS}}` — bulleted list with bold category labels:**
+
+```html
+<ul class="skills-list">
+  <li><strong>Programming Languages:</strong> Java, Python, JavaScript</li>
+  <li><strong>Backend/Frameworks:</strong> Spring Boot, Apache Spark, React</li>
+  <li><strong>Cloud/DevOps:</strong> AWS, GCP, Docker, Kubernetes</li>
+</ul>
+```
+
+**`{{EDUCATION}}` — one block per degree:**
+
+```html
+<div class="edu-item">
+  <div class="edu-header">
+    <span class="edu-org">Visvesvaraya Technological University</span>
+    <span class="edu-year">Aug 2017 - Aug 2021</span>
+  </div>
+  <div class="edu-degree">B.E, Computer Science and Engineering</div>
+  <div class="edu-gpa">CGPA: 8.0</div>
+</div>
+```
 
 ## Canva CV Generation (optional)
 
