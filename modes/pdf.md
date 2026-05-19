@@ -48,6 +48,17 @@
 4. Technical Skills (bulleted list con categorías en bold)
 5. Education
 
+## Regla de una página (OBLIGATORIO)
+
+El CV DEBE caber en una sola página. Después de generar el contenido, verifica mentalmente si cabe. Si no cabe, recorta en este orden de prioridad (elimina lo menos valioso primero):
+
+1. Bullets del rol más antiguo o menos relevante para el JD — deja solo 1-2 bullets o elimina el rol si es muy antiguo/irrelevante
+2. Bullets redundantes o de bajo impacto en cualquier rol (los que no tienen métrica, no tienen keyword del JD, o repiten ideas de otro bullet)
+3. Categorías de skills menos relevantes para el JD
+4. Líneas de la summary que repiten lo que ya está en experience
+
+**Nunca elimines:** el bullet más fuerte de cada rol (el que tiene la métrica más grande o el logro más relevante al JD).
+
 ## Estrategia de keyword injection (ético, basado en verdad)
 
 Ejemplos de reformulación legítima:
