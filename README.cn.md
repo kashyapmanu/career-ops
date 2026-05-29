@@ -71,7 +71,7 @@ career-ops 具备代理式工作能力：Claude Code 会用 Playwright 浏览招
 | **谈薪脚本** | 薪资谈判框架、地域折扣反驳话术、竞品 offer 杠杆策略 |
 | **ATS PDF 生成** | 注入关键词的简历，采用 Space Grotesk + DM Sans 设计 |
 | **平台扫描器** | 预配置 45+ 家公司（Anthropic、OpenAI、ElevenLabs、Retool、n8n...），支持跨 Ashby、Greenhouse、Lever、Wellfound 的自定义查询 |
-| **批量处理** | 使用 `claude -p` worker 并行评估 |
+| **批量处理** | 使用无头 CLI 工作器（如 `claude -p`、`opencode run`）并行评估 |
 | **Dashboard TUI** | 在终端 UI 中浏览、筛选和排序你的求职管道 |
 | **人类在环** | AI 负责评估和建议，你负责决定和行动。系统绝不会自动提交申请，最终决定始终在你手上 |
 | **管道完整性** | 自动合并、去重、状态标准化和健康检查 |

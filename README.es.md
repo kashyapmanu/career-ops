@@ -66,7 +66,7 @@ Construido por alguien que lo uso para evaluar 740+ ofertas, generar 100+ CVs pe
 | **Scripts de negociacion** | Frameworks de negociacion salarial, pushback de descuentos geograficos, leverage de ofertas competidoras |
 | **PDFs ATS** | CVs con keywords inyectados, diseño Space Grotesk + DM Sans |
 | **Scanner de portales** | 45+ empresas pre-configuradas (Anthropic, OpenAI, ElevenLabs, Retool, n8n...) + queries en Ashby, Greenhouse, Lever, Wellfound |
-| **Batch** | Evaluacion en paralelo con workers `claude -p` |
+| **Batch** | Evaluación en paralelo con workers headless CLI (`claude -p`, `opencode run`, etc.) |
 | **Dashboard TUI** | Terminal UI para navegar, filtrar y ordenar tu pipeline |
 | **Human-in-the-Loop** | La IA evalua y recomienda, tu decides y actuas. El sistema nunca envia una aplicacion -- tu siempre tienes la ultima palabra |
 | **Integridad de pipeline** | Merge automatico, dedup, normalizacion de estados, health checks |
